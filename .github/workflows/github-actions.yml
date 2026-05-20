@@ -1,1 +1,7 @@
+name: Gilded Rose Actions
+run-name: ${{github.actor}} is testing Gilded Rose
+on: [push]
+jobs:
+  build:
 
+    runs-on: ubuntu-latest
