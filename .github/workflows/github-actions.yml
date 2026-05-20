@@ -3,20 +3,19 @@ run-name: ${{github.actor}} is testing Gilded Rose
 on: [push]
 jobs:
   test:
-
     runs-on: ubuntu-latest
     steps:
-      -name: Checkout Code
-      uses:[actions/checkout@v4](https://github.com)
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      -name: Set up Python
-      uses:[actions/setup-python@v5](https://github.com)
-      with:
-        python-version: '3.12'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-      -name: Install dependencies
-      run: |
-        python -m install --upgrade pip
-        pip install pytest
-      -name: Run tests with pytest
-      run: pytest
+      - name: Install dependencies
+        run: |
+          python -m install --upgrade pip
+          pip install pytest
+      - name: Run tests with pytest
+       run: pytest
